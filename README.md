@@ -75,7 +75,7 @@ sudo python3 -m pip install ./PasteJacker --upgrade
 ## Donation
 If this tool has been useful for you, feel free to thank me by buying me a coffee :)
 
-[![Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoff.com/d4vinci)
+[![Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/d4vinci)
 
 ## Disclaimer
 PasteJacker is created to help in penetration testing and it's not responsible for any misuse or illegal purposes.
