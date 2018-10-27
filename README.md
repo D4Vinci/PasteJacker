@@ -1,7 +1,13 @@
 # PasteJacker [![Python 3.5](https://img.shields.io/badge/Python-3.0+-yellow.svg)](http://www.python.org/download/) ![Version](https://img.shields.io/badge/Version-1.0-red.svg)
 The main purpose of the tool is automating (PasteJacking/Clipboard poisoning/whatever you name it) attack with collecting all the known tricks used in this attack in one place and one automated job as after searching I found there's no tool doing this job the right way :smile:
 
-Now while this attack depends on what the user will paste, imagine adding this attack to metasploit web delivery module.
+Now while this attack depends on what the user will paste, imagine adding this attack to Metasploit web delivery module.
+
+See this simple scenario to make things clear:
+1. The target opens an HTML page served by the tool and this page has anything that makes the wants to copy from it to the terminal like some installation instructions.
+2. Target copies a thing from the page then it replaced quickly with our line.
+3. The user pastes it in the terminal and before he notices that the line changed, the line gets executed by itself in the background and the terminal gets cleared.
+4. All of that happened in a second and the user sees the terminal is usable again and maybe thinks this is a bad program and he won't install it but you already got your meterpreter shell :smile:
 
 ##### This tool uses 3 methods to trick user into copying our payload instead of the command he copies:
  + **Using javascript to hook the copy event and replace copied data.**
@@ -29,7 +35,7 @@ Now while this attack depends on what the user will paste, imagine adding this a
 
 ##### What's the payload user copies ?
 PasteJacker gives you the option to do one of this things:
-  1. Generate a msfvenom backdoor on our machine and the liner targets copy will download the backdoor on the target machine, through wget or certutil depends on the OS, then executes it on the background without printing anything to the terminal.
+  1. Generate a msfvenom backdoor on our machine and the liner target gonna copy will download the backdoor on the its machine, through wget or certutil depends on the OS, then executes it on the background without printing anything to the terminal.
   2. Serve a liner that gets you a reverse netcat connection on the target machine running in the background of course.
   3. Serve your **custom** liner like Metasploit web-delivery payload with adding some touches to hide any possible output.
 
@@ -41,11 +47,11 @@ PasteJacker gives you the option to do one of this things:
 <img src="https://github.com/D4Vinci/PasteJacker/blob/master/PasteJacker/Screenshots/p3.png" width="100%"></img>
 
 ## Installing and requirements
-- Python 3
-- Linux or Unix-based system (Currently tested only on Kali Linux rolling and Ubuntu 16.04)
-- Third-party requirements like msfvenom but only if you are gonna use the msfvenom option of course
-- Third-party library ncurses-dev for Ubuntu (Thanks for @mhaskar)
-- Root access
+- Python 3 and setuptools module.
+- Linux or Unix-based system (Currently tested only on Kali Linux rolling and Ubuntu 16.04).
+- Third-party requirements like msfvenom but only if you are gonna use the msfvenom option of course.
+- Third-party library ncurses-dev for Ubuntu (Thanks for @mhaskar).
+- Root access.
 
 ### Installing
 
