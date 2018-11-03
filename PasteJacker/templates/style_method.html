@@ -1,10 +1,10 @@
 <html>
     <body>
-      <p> {{fake_p1}}
+      <p> {{fake_p1 | safe}}
         <span style="position: absolute; left: -2000; top: -100px;">
           {{escape_p1}} {{payload}} {{escape_p2}}
          </span>
-           {{fake_p2}}
+           {{fake_p2 | safe}}
       </p>
     </body>
 </html>

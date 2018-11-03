@@ -12,7 +12,7 @@ with open('README.md') as f:
 setup(name='PasteJacker',
     version=version,
     author = "Karim Shoair (D4Vinci)",
-    description='Add PasteJacking to web-delivery attacks',
+    description='Hacking systems with the automation of PasteJacking attacks.',
     long_description=des,
     url='https://github.com/D4Vinci/PasteJacker',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
@@ -20,7 +20,7 @@ setup(name='PasteJacker',
     install_requires=[
         'Jinja2',
         'readline;platform_system!="Windows"',
-        'pyreadline;platform_system=="Windows"'
+        'gnureadline;platform_system!="Windows"'
     ],
     entry_points={
         'console_scripts': [

@@ -7,7 +7,8 @@ from urllib.request import urlopen
 def check():
 	f = open( utils.add_corefilepath("Data","version.txt"), 'r')
 	file_data = f.read().strip()
-	try:
+	return file_data
+"""	try:
 		version = urlopen('https://raw.githubusercontent.com/D4Vinci/PasteJacker/master/PasteJacker/Core/Data/version.txt').read().decode('utf-8').strip()
 	except:
 		error("Can't reach Internet !!!")
@@ -17,3 +18,4 @@ def check():
 		return file_data+R+" but new version is available!"
 	else:
 		return file_data
+"""

@@ -1,15 +1,24 @@
-# PasteJacker [![Python 3.5](https://img.shields.io/badge/Python-3.0+-yellow.svg)](http://www.python.org/download/) ![Version](https://img.shields.io/badge/Version-1.0-red.svg)
+# PasteJacker [![Python 3.5](https://img.shields.io/badge/Python-3.0+-yellow.svg)](http://www.python.org/download/) ![Version](https://img.shields.io/badge/Version-0.2-red.svg)
 The main purpose of the tool is automating (PasteJacking/Clipboard poisoning/whatever you name it) attack with collecting all the known tricks used in this attack in one place and one automated job as after searching I found there's no tool doing this job the right way :smile:
 
-Now while this attack depends on what the user will paste, imagine adding this attack to Metasploit web delivery module.
+Now because this attack depends on what the user will paste, I implemented the Metasploit web-delivery module's idea into the tool so when the user pastes into the terminal, you gets meterpreter session on his device :smile:
 
-See this simple scenario to make things clear:
-1. The target opens an HTML page served by the tool and this page has anything that makes the wants to copy from it to the terminal like some installation instructions.
-2. Target copies a thing from the page then it replaced quickly with our line.
-3. The user pastes it in the terminal and before he notices that the line changed, the line gets executed by itself in the background and the terminal gets cleared.
-4. All of that happened in a second and the user sees the terminal is usable again and maybe thinks this is a bad program and he won't install it but you already got your meterpreter shell :smile:
+### What's PasteJacking ?
+In short, Pastejacking is a method that malicious websites employ to take control of your computers’ clipboard and change its content to something harmful without your knowledge. *[From The Windows club definition](https://www.thewindowsclub.com/what-is-pastejacking)*
 
-##### This tool uses 3 methods to trick user into copying our payload instead of the command he copies:
+So here what I did is automating the original attack and adding two other tricks to fool the user, using HTML and CSS *Will talk about it* then added meterpreter sessions as I said before.
+
+### A simple scenario to make things clear:
+1. The target opens an HTML page served by the tool and this page has anything that makes the user wants to copy from it and paste into the terminal. *Ex: package installation instructions*
+2. Target copies anything from the page then in the background it gets replaced quickly with our liner.
+3. The user pastes into the terminal and before he notices that the line he copied has been changed :
+    - The line gets executed by itself in the background (Without pressing enter)
+    - The terminal gets cleared.
+    - The user sees the terminal is usable again.
+    - You already got your meterpreter session by this time.
+4. All of that happened in less than second and maybe the user thinks this is a bad program and he won't install it :smile:
+
+### This tool uses 3 methods to trick user into copying our payload instead of the command he copies:
  + **Using javascript to hook the copy event and replace copied data.**
     - Advantages :
         1. Anything the user copies in the page will be replaced with our line.
@@ -49,7 +58,7 @@ PasteJacker gives you the option to do one of this things:
 ## Installing and requirements
 - Python 3 and setuptools module.
 - Linux or Unix-based system (Currently tested only on Kali Linux rolling and Ubuntu 16.04).
-- Third-party requirements like msfvenom but only if you are gonna use the msfvenom option of course.
+- Third-party requirements like msfvenom but only if you are gonna use the msfvenom option, of course.
 - Third-party library ncurses-dev for Ubuntu (Thanks for @mhaskar).
 - Root access.
 
@@ -63,7 +72,7 @@ sudo pastejacker
 ```
 
 ## Updating the framework or the database
-- On Linux while outside the directory
+- On Linux while you are outside the directory
 ```
 cd PasteJacker && git pull && cd ..
 sudo python3 -m pip install ./PasteJacker --upgrade
@@ -73,13 +82,13 @@ sudo python3 -m pip install ./PasteJacker --upgrade
 
 - [PasteJacking GitHub repo](https://github.com/dxa4481/Pastejacking)
 - [Clipboard poisoning attacks on the Mac - Malwarebytes ](https://blog.malwarebytes.com/threat-analysis/2016/05/clipboard-poisoning-attacks-on-the-mac/)
-- [Metasploit web delivery module ](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/script/web_delivery.rb)
+- [Metasploit web-delivery module's source and idea ](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/script/web_delivery.rb)
 
 ## Contact
 - [Twitter](https://twitter.com/D4Vinci1)
 
 ## Donation
-If this tool has been useful for you, feel free to thank me by buying me a coffee :)
+If this tool has been useful for you, feel free to thank me by buying me a coffee or more ;)
 
 [![Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/d4vinci)
 

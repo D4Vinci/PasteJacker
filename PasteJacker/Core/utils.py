@@ -26,13 +26,13 @@ banner = """{G}
                   / / _.   '.   .':      /        '        | | | (_| \__ \ ||  __/\__/ / (_| | (__|   <  __/ |
                   ~(_/ .   /    _  `  .-<_                 \_|  \__,_|___/\__\___\____/ \__,_|\___|_|\_\___|_|
                     /_/ . ' .-~" `.  / \  \          ,z=.  /────────────────────────────────────────────────\\
-                    ~( /   '  :   | K   "-.~-.______//     {W}[{Y}=>{W}] Add PasteJacking to web-delivery attacks [{Y}<={W}]{G}
-                      "-,.    l   I/ \_    __(--->._(==.   {W}[{Y}=>{W}]      {B}Created by: {R}Karim Shoair (D4Vinci)  {W}[{Y}<={W}]{G}
-                       //(     \  <    ~"~"     //         {W}[{Y}=>{W}]              {B}Version: {R}{version}                {W}[{Y}<={W}]{G}
-                      /' /\     \  \     ,v=.  ((          {W}[{Y}=>{W}]            {B}Codename:{R} Hijack              {W}[{Y}<={W}]{G}
-                    .^. / /\     "  )__ //===-  `          {W}[{Y}=>{W}]       {B}Follow me on Twitter: {R}@D4Vinci1    {W}[{Y}<={W}]{G}
-                   / / ' '  "-.,__ (---(==-                {W}[{Y}=>{W}]                                          [{Y}<={W}]{G}
-                 .^ '       :  T  ~"   ll                  {W}[{Y}=>{W}]         CHOOSE A TARGET TO BEGIN         [{Y}<={W}]{G}
+                    ~( /   '  :   | K   "-.~-.______//     {W}[{Y}=>{W}] PasteJacking attacks automation with a style. [{Y}<={W}]{G}
+                      "-,.    l   I/ \_    __(--->._(==.   {W}[{Y}=>{W}]      {B}Created by: {R}Karim Shoair (D4Vinci)       {W}[{Y}<={W}]{G}
+                       //(     \  <    ~"~"     //         {W}[{Y}=>{W}]              {B}Version: {R}{version}                     {W}[{Y}<={W}]{G}
+                      /' /\     \  \     ,v=.  ((          {W}[{Y}=>{W}]            {B}Codename:{R} Hijack                   {W}[{Y}<={W}]{G}
+                    .^. / /\     "  )__ //===-  `          {W}[{Y}=>{W}]       {B}Follow me on Twitter: {R}@D4Vinci1         {W}[{Y}<={W}]{G}
+                   / / ' '  "-.,__ (---(==-                {W}[{Y}=>{W}]                                               [{Y}<={W}]{G}
+                 .^ '       :  T  ~"   ll                  {W}[{Y}=>{W}]         CHOOSE A TARGET TO BEGIN              [{Y}<={W}]{G}
                 / .  .  . : | :!        \\                  \________________________________________________/
                (_/  /   | | j-"          ~^
                  ~-<_(_.^-~"
@@ -97,8 +97,8 @@ def ask_for_text():
         if not line:
             break
         else:
-            text = text +line+ "\n"
-    return text
+            text = text +line+ "<br>"
+    return (text or "  ")
 
 def write_resource(payload,ip,port):
     data = """use multi/handler

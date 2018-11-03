@@ -1,6 +1,6 @@
 <html>
     <body>
-        {{fake_p1}} {{fake_p2}}
+        {{fake_p1 | safe}} {{fake_p2 | safe}}
         <script>
             document.addEventListener('copy', function(e){
                 console.log(e);

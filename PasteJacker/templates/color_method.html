@@ -1,8 +1,8 @@
 <html>
     <body>
-      <span style="display: block; float: left;">{{fake_p1}} </span>
+      <span style="display: block; float: left;">{{fake_p1 | safe}} </span>
       <span style="display: block; float: left; background: transparent; color: transparent; white-space: no-wrap; overflow: hidden; width: 0px; height: 0px;"> {{escape_p1}} {{payload}} {{escape_p2}} </span>
-      <span style="display: block; float: left;"> {{fake_p2}}</span>
+      <span style="display: block; float: left;"> {{fake_p2 | safe}}</span>
       <span style="display: block; white-space: no-wrap;"> </span>
       <span style="display: block; clear: both;"></span>
     </body>
