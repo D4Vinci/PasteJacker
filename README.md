@@ -48,7 +48,7 @@ PasteJacker gives you the option to do one of this things:
   2. Serve a liner that gets you a reverse netcat connection on the target machine running in the background of course.
   3. Serve your **custom** liner like Metasploit web-delivery payload with adding some touches to hide any possible output.
 
-# Screenshots
+# Screenshots (Not updated)
 
 <img src="https://github.com/D4Vinci/PasteJacker/blob/master/PasteJacker/Screenshots/p0.png" width="100%"></img>
 <img src="https://github.com/D4Vinci/PasteJacker/blob/master/PasteJacker/Screenshots/p1.png" width="100%"></img>
