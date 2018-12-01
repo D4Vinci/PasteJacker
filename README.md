@@ -1,8 +1,10 @@
 # PasteJacker [![Python 3.5](https://img.shields.io/badge/Python-3.0+-yellow.svg)](http://www.python.org/download/) ![Version](https://img.shields.io/badge/Version-0.2-red.svg)
+
 The main purpose of the tool is automating (PasteJacking/Clipboard poisoning/whatever you name it) attack with collecting all the known tricks used in this attack in one place and one automated job as after searching I found there's no tool doing this job the right way :smile:
 
 Now because this attack depends on what the user will paste, I implemented the Metasploit web-delivery module's idea into the tool so when the user pastes into the terminal, you gets meterpreter session on his device :smile:
 
+[Watch tutorial on youtube](https://www.youtube.com/watch?v=FfMoCPVjF5Y)
 ### What's PasteJacking ?
 In short, Pastejacking is a method that malicious websites employ to take control of your computers’ clipboard and change its content to something harmful without your knowledge. *[From The Windows club definition](https://www.thewindowsclub.com/what-is-pastejacking)*
 
